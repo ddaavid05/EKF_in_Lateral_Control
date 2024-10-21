@@ -7,7 +7,7 @@ m=1500;
 Iz=1200;
 
 % Sampling time
-T = 0.01;
+T = 0.05;
 
 % Load simulink
 load_system('system_EKF_rendes')
