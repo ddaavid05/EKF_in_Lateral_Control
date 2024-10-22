@@ -30,7 +30,7 @@ Q_e2 = sigma_e2_dot^2 * [0 0 0 0;
 
 Q = Q_e1 + Q_e2;
 
-P0 = eye(4) * 10;
+P0 = eye(4) * 100;
 X0 = zeros(4, 1);
 
 % Load simulink
