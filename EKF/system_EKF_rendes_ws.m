@@ -38,7 +38,7 @@ vehicleParamsBus.Elements = elems;
 
 
 % Sampling time
-T = 0.01;
+T = 0.001;
 
 % Treshold
 treshold = 1;
@@ -65,10 +65,10 @@ Q_e2 = sigma_e2_dot^2 * [0 0 0 0;
 
 Q = Q_e1 + Q_e2;
 
-P0 = eye(4) * 10;
+P0 = eye(4) * 1000;
 x0 = zeros(4, 1);
 
 % Load simulink
-load_system('system_EKF_rendes')
-open_system('system_EKF_rendes')
-sim('system_EKF_rendes')
+load_system('system_EKF_rendes');
+open_system('system_EKF_rendes');
+sim('system_EKF_rendes');
