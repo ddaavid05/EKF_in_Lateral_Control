@@ -38,7 +38,7 @@ vehicleParamsBus.Elements = elems;
 
 
 % Sampling time
-T = 0.01;
+T = 0.001;
 
 % Treshold
 treshold = 1;
@@ -53,15 +53,15 @@ R = diag([e1_noise_std^2, e2_noise_std^2]);
 % Process noise covariance
 sigma_e1_dot = 0.1;
 sigma_e2_dot = 0.05;
-Q_e1 = sigma_e1_dot^2 * [T^2 T 0 0;
-                         T  1 0 0;
-                         0  0 0 0;
-                         0  0 0 0];
+Q_e1 = sigma_e1_dot^2 * [1 0 0 0;
+                         0 1 0 0;
+                         0 0 0 0;
+                         0 0 0 0];
 
 Q_e2 = sigma_e2_dot^2 * [0 0 0 0;
                          0 0 0 0;
-                         0 0 T^2 T;
-                         0 0 T 1];
+                         0 0 1 0;
+                         0 0 0 1];
 
 Q = Q_e1 + Q_e2;
 

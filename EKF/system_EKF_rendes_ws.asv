@@ -6,9 +6,44 @@ lr=1.8;
 m=1500;
 Iz=1200;
 
-% Sampling time
-T = 0.01;
+vehicleParams = struct('Cf', Cf, 'Cr', Cr, 'lf', lf, 'lr', lr, 'm', m, 'Iz', Iz);
 
+% Create a Bus object
+elems(1) = Simulink.BusElement;
+elems(1).Name = 'Cf';
+elems(1).DataType = 'double';
+
+elems(2) = Simulink.BusElement;
+elems(2).Name = 'Cr';
+elems(2).DataType = 'double';
+
+elems(3) = Simulink.BusElement;
+elems(3).Name = 'lf';
+elems(3).DataType = 'double';
+
+elems(4) = Simulink.BusElement;
+elems(4).Name = 'lr';
+elems(4).DataType = 'double';
+
+elems(5) = Simulink.BusElement;
+elems(5).Name = 'm';
+elems(5).DataType = 'double';
+
+elems(6) = Simulink.BusElement;
+elems(6).Name = 'Iz';
+elems(6).DataType = 'double';
+
+vehicleParamsBus = Simulink.Bus;
+vehicleParamsBus.Elements = elems;
+
+
+% Sampling time
+T = 0.001;
+
+% Treshold
+treshold = 1;
+
+% Noise
 e1_noise_std = 0.05; % 5 cm
 e2_noise_std = deg2rad(0.5); % 0.5 degree
 
@@ -18,20 +53,20 @@ R = diag([e1_noise_std^2, e2_noise_std^2]);
 % Process noise covariance
 sigma_e1_dot = 0.1;
 sigma_e2_dot = 0.05;
-Q_e1 = sigma_e1_dot^2 * [T^2 T 0 0;
-                         T  1 0 0;
+Q_e1 = sigma_e1_dot^2 * [1  0 0 0;
+                         0  1 0 0;
                          0  0 0 0;
                          0  0 0 0];
 
 Q_e2 = sigma_e2_dot^2 * [0 0 0 0;
                          0 0 0 0;
-                         0 0 T^2 T;
+                         0 0 1 0;
                          0 0 T 1];
 
 Q = Q_e1 + Q_e2;
 
-P0 = eye(4) * 100;
-X0 = zeros(4, 1);
+P0 = eye(4) * 10;
+x0 = zeros(4, 1);
 
 % Load simulink
 load_system('system_EKF_rendes')
