@@ -26,6 +26,11 @@ Ac = [0 1 0 0;
       0 0 0 1;
       0 P4 P5 P6];
   
+Bc = [0 0;
+      P7 P8;
+      0 0;
+      P9 P10];
+  
 H = [ 1, 0, 0, 0;
       0, 0, 1, 0];
   
@@ -35,3 +40,10 @@ O = [H;
      H*Ac^3];
 
 rank(O)
+
+
+% Convert continuous-time to discrete-time 
+sysc = ss(Ac, Bc, [], []); 
+sysd = c2d(sysc, T); 
+Ad = sysd.A
+Bd = sysd.B

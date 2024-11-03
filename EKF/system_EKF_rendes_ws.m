@@ -70,6 +70,6 @@ P0 = eye(4) * 1000;
 x0 = zeros(4, 1);
 
 % Load simulink
-load_system('system_EKF_rendes_ACEKF');
-open_system('system_EKF_rendes_ACEKF');
-sim('system_EKF_rendes_ACEKF');
+load_system('system_EKF_rendes_ACEKF_validation');
+open_system('system_EKF_rendes_ACEKF_validation');
+sim('system_EKF_rendes_ACEKF_validation');
