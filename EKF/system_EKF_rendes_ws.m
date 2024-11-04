@@ -41,7 +41,7 @@ vehicleParamsBus.Elements = elems;
 T = 0.01;
 
 % Treshold
-treshold = 1;
+treshold = 0.01;
 
 % Noise
 e1_noise_std = 0.05; % 5 cm
