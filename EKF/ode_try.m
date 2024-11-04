@@ -32,6 +32,11 @@ Vx = 20;
 x_Prior = [4 5 6 7]';
 control_vector = [0.17 1]';
 
+P_prior = [1 2 3 4;
+           5 6 7 8;
+           1 2 3 4;
+           5 6 7 8];
+
 
 % State-space model elements
 P1 = -((2*Cf + 2*Cr)/(m * Vx));
@@ -66,10 +71,6 @@ x0 = x_Prior;
 % Define input control vector (u)
 u = control_vector;
 
-% Initialize t and x for clarity 
-% t = []; 
-% x = [];
-
 % Solve the state equation using ode45 
 [t, x] = ode45(@(t, x) Ac*x + Bc*u, tspan, x0);
 
@@ -84,7 +85,45 @@ x_pred = x(end,:)'
 % disp(x);
 
 % Plot the results
-plot(t, x)
-xlabel('Time t')
-ylabel('Solution x')
-title('Solution of x_dot')
+% plot(t, x)
+% xlabel('Time t')
+% ylabel('Solution x')
+% title('Solution of x_dot')
+
+
+% Covariance
+% Initial conditions 
+P0 = P_prior; 
+
+% Define Jacoby
+F = Ac;
+
+% Flatten the initial covariance matrix 
+P0_vec = P0(:); 
+
+% Solve the covariance equation using ode45 
+[~, P_sol] = ode45(@(t, P_vec) covarianceODE(t, P_vec, F, Q), tspan, P0_vec); 
+
+% Reshape the final solution back into a matrix 
+P_pred = reshape(P_sol(end, :), 4, 4)
+
+% Display the results
+% disp('Time points:');
+% disp(t);
+disp('Solution P values:');
+disp(P_sol);
+
+% Plot the results
+% plot(t, x)
+% xlabel('Time t')
+% ylabel('Solution x')
+% title('Solution of x_dot')
+
+
+
+% Define the function for the covariance 
+function dPdt = covarianceODE(t, P_vec, F, Q) 
+    P = reshape(P_vec, 4, 4); % Reshape the vector back into a matrix 
+    dPdt = F*P + P*F' + Q; % Calculate the derivative 
+    dPdt = dPdt(:); % Flatten the matrix back into a vector 
+end
