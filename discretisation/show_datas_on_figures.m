@@ -45,7 +45,7 @@ function show_datas_on_figures
             hold off;
             xlabel('Time (s)');
             ylabel(state_variable);
-            title([state_variable, ' comparisom']);
+            title([state_variable, ' comparison']);
             legend('Continuous State', "Discrete State", 'Location', 'best');
             grid on;
         end
