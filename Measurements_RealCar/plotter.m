@@ -28,7 +28,7 @@ for i = 1:data_columns
     plot(time_meas, out.measurementsEKF.Data(:, i), 'LineWidth', 1.5);
     hold on;
     plot(time_pred, out.predictionsEKF.Data(:, i), 'LineWidth', 1.5);
-    ylim([-5, 5])
+    ylim([-3, 3])
     hold off;
     xlabel('Time (s)');
     ylabel(state_variable);
