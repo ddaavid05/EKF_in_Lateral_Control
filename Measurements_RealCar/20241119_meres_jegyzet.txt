@@ -1,0 +1,173 @@
+8 ->
+e1_noise_std = 0.1; % 0.05 m
+e2_noise_std = deg2rad(1); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.025;  % 0.005
+
+sinuszozás az egyenesben
+
+9 ->
+e1_noise_std = 0.1; % 0.05 m
+e2_noise_std = deg2rad(1); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.01;   % 0.01
+sigma_e2_dot = 0.005;  % 0.005
+
+33e-3 előretekintés
+
+bele kellet nyúlni
+
+
+10 ->
+e1_noise_std = 0.1; % 0.05 m
+e2_noise_std = deg2rad(1); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.001;  % 0.005
+
+33e-3 előretekintés
+
+
+11 ->
+e1_noise_std = 0.1; % 0.05 m
+e2_noise_std = deg2rad(1); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.001;  % 0.005
+
+33e-3 előretekintés
+
+moving average off
+
+12 ->
+e1_noise_std = 0.15; % 0.05 m
+e2_noise_std = deg2rad(2); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.01;  % 0.005
+
+33e-3 előretekintés
+moving average off
+
+13->
+e1_noise_std = 0.2; % 0.05 m
+e2_noise_std = deg2rad(5); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.01;  % 0.005
+
+33e-3 előretekintés
+moving average off
+
+14 ->
+% Noise
+e1_noise_std = 0.5; % 0.05 m
+e2_noise_std = deg2rad(8); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.01;  % 0.005
+
+egy kis sinusozás megjelenik
+
+15 ->
+% Noise
+e1_noise_std = 0.5; % 0.05 m
+e2_noise_std = deg2rad(5); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.01;  % 0.005
+
+Ez egész fasza volt
+
+
+16 ->
+% Noise
+e1_noise_std = 0.7; % 0.05 m
+e2_noise_std = deg2rad(6); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.01;  % 0.005
+
+szinuszozás egy kicsit, több rángatás
+
+
+17 ->
+% Noise
+e1_noise_std = 0.7; % 0.05 m
+e2_noise_std = deg2rad(5); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.01;  % 0.005
+
+az elejen u betű balra, aztan egesz okes, vegen minimal simus
+
+18 ->
+% Noise
+e1_noise_std = 0.6; % 0.05 m
+e2_noise_std = deg2rad(5); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.01;  % 0.005
+
+sinusozas, 
+
+
+19 ->
+% Noise
+e1_noise_std = 0.5; % 0.05 m
+e2_noise_std = deg2rad(5); % 0.5 degree
+
+% Measurement noise covariance matrix (constant)
+R = diag([e1_noise_std^2, e2_noise_std^2]);
+
+% Process noise covariance
+sigma_e1_dot = 0.05;   % 0.01
+sigma_e2_dot = 0.01;  % 0.005
+
+Elvileg ugyanaz minta nagyon Fasza
+

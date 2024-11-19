@@ -33,6 +33,6 @@ for i = 1:data_columns
     xlabel('Time (s)');
     ylabel(state_variable);
     title([state_variable, ' comparison']);
-    legend('Measurement', "Predicted", 'Location', 'best');
+    legend('Measurement', "Estimated", 'Location', 'best');
     grid on;
 end
