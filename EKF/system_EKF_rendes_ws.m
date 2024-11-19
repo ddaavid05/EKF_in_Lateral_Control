@@ -51,8 +51,9 @@ e2_noise_std = deg2rad(0.5); % 0.5 degree
 R = diag([e1_noise_std^2, e2_noise_std^2]);
 
 % Process noise covariance
-sigma_e1_dot = 0.1;
-sigma_e2_dot = 0.05;
+sigma_e1_dot = 0.1; % 0.01
+sigma_e2_dot = 0.05; % % 0.005
+
 Q_e1 = sigma_e1_dot^2 * [T^2 T 0 0;
                          T  1 0 0;
                          0  0 0 0;
