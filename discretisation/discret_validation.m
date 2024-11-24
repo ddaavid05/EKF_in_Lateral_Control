@@ -10,7 +10,7 @@ Iz=1200;
 T = 0.033;
 
 % Dynamic parameter
-Vx = 40;
+Vx = 10;
 % t = 0.1:T:2; % Idő vektor a mintavételi idő alapján 
 % Vx = 5*t;
 
