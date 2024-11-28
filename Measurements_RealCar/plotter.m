@@ -1,5 +1,3 @@
-
-
 % Adatok betöltése a workspace-ből
 out = evalin('base', 'out');
 

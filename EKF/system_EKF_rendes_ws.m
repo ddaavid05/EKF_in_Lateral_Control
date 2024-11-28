@@ -6,6 +6,8 @@ lr=1.8;
 m=1500;
 Iz=1200;
 
+Vx=10;
+
 vehicleParams = struct('Cf', Cf, 'Cr', Cr, 'lf', lf, 'lr', lr, 'm', m, 'Iz', Iz);
 
 % Create a Bus object
@@ -38,10 +40,10 @@ vehicleParamsBus.Elements = elems;
 
 
 % Sampling time
-T = 0.001;
+T = 0.033;
 
 % Treshold
-treshold = 1;
+threshold = 1;
 
 % Noise
 e1_noise_std = 0.05; % 5 cm
@@ -51,18 +53,18 @@ e2_noise_std = deg2rad(0.5); % 0.5 degree
 R = diag([e1_noise_std^2, e2_noise_std^2]);
 
 % Process noise covariance
-sigma_e1_dot = 0.05; % 0.01
-sigma_e2_dot = 0.01; % % 0.005
+sigma_e1_dot = 0.01;
+sigma_e2_dot = 0.005;
 
 Q_e1 = sigma_e1_dot^2 * [T^2 T 0 0;
-                         T  1 0 0;
-                         0  0 0 0;
-                         0  0 0 0];
+                         T   1 0 0;
+                         0   0 0 0;
+                         0   0 0 0];
 
-Q_e2 = sigma_e2_dot^2 * [0 0 0 0;
-                         0 0 0 0;
+Q_e2 = sigma_e2_dot^2 * [0 0 0   0;
+                         0 0 0   0;
                          0 0 T^2 T;
-                         0 0 T 1];
+                         0 0 T   1];
 
 Q = Q_e1 + Q_e2;
 
