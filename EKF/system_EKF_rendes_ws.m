@@ -38,7 +38,7 @@ vehicleParamsBus.Elements = elems;
 
 
 % Sampling time
-T = 0.01;
+T = 0.033;
 
 % Treshold
 treshold = 0.01;

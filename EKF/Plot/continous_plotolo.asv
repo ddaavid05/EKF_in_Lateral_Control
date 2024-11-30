@@ -1,0 +1,49 @@
+% Load data from workspace
+out = load('C:\Users\Admin\Documents\Dávid\Egyetem\Mester\Diploma2\Matlab_representation\EKF\Plot\continous.mat');
+time_data = out.out.continous.Time;
+data1 = out.out.continous.Data(:, 1);
+data2 = out.out.continous.Data(:, 2);
+data3 = out.out.continous.Data(:, 3);
+data4 = out.out.continous.Data(:, 4);
+
+% Plot the state variables in separate figures and connect the predicted points to initial points
+
+% State x1
+figure;
+plot(time_data, data1, 'g-', 'LineWidth', 1.5); % Plot the data from workspace
+xlabel('Time (t)');
+ylabel('x1');
+title('State Variable x1 vs Time');
+legend('ODE45 Solution', 'Initial to Predicted', 'Data1 from Workspace');
+grid on;
+hold off;
+
+% State x2
+figure;
+plot(time_data, data2, 'g-', 'LineWidth', 1.5); % Plot the data from workspace
+xlabel('Time (t)');
+ylabel('x2');
+title('State Variable x1 vs Time');
+legend('ODE45 Solution', 'Initial to Predicted', 'Data1 from Workspace');
+grid on;
+hold off;
+
+% State x3
+figure;
+plot(time_data, data3, 'g-', 'LineWidth', 1.5); % Plot the data from workspace
+xlabel('Time (t)');
+ylabel('x3');
+title('State Variable x1 vs Time');
+legend('ODE45 Solution', 'Initial to Predicted', 'Data1 from Workspace');
+grid on;
+hold off;
+
+% State x4
+figure;
+plot(time_data, data4, 'g-', 'LineWidth', 1.5); % Plot the data from workspace
+xlabel('Time (t)');
+ylabel('x4');
+title('State Variable x1 vs Time');
+legend('ODE45 Solution', 'Initial to Predicted', 'Data1 from Workspace');
+grid on;
+hold off;
