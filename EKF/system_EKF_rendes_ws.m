@@ -1,5 +1,5 @@
 % Parameters
-Cf=Vehicle_CorneringStiffnessFrontAxle.Value;
+Cf=80000;
 Cr=80000;
 lf=1.4;
 lr=1.8;
