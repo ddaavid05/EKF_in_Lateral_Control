@@ -1,0 +1,60 @@
+% Open and read the text file
+filename = 'C:\Users\Admin\Documents\Dávid\Egyetem\Mester\Diploma2\Matlab_representation\Measurements_RealCar\egyetem_latlon.txt'; % replace with your actual file path
+data = readtable(filename);
+
+% Extract the longitude and latitude values
+longitude = data.Longitude;
+latitude = data.Latitude;
+
+% Convert WGS84 coordinates to UTM
+[utm_x, utm_y, utm_zone] = wgs2utm(latitude, longitude);
+
+% Origin coordinates in UTM
+X_orig = 353582.57;
+Y_orig = 5260202.74;
+
+% Convert UTM coordinates to external coordinate system
+x_new = utm_x - X_orig;
+y_new = utm_y - Y_orig;
+
+% Plot the converted coordinates
+figure;
+plot(x_new, y_new, '-o', 'LineWidth', 2);
+xlabel('X');
+ylabel('Y');
+title('Converted UTM to External Coordinate System');
+grid on;
+
+% Plot the route
+figure;
+plot(longitude, latitude, 'LineWidth', 2);
+xlabel('Longitude');
+ylabel('Latitude');
+title('Route Plot');
+grid on;
+
+% --------------------------------------------------------------------------------------------------------
+% Extract x and y values from the workspace variable
+x = out.vehiclePosition.cgPosition.x.Data;
+y = out.vehiclePosition.cgPosition.y.Data;
+
+% Plot x and y values on a separate figure
+figure;
+plot(x, y, 'LineWidth', 2);
+xlabel('X');
+ylabel('Y');
+title('X-Y Position Plot');
+grid on;
+
+
+% Extract global reference positions from the workspace variable
+global_ref_x = out.targetPosition.globalReferencePosX.Data;
+global_ref_y = out.targetPosition.globalReferencePosY.Data;
+
+% Plot global reference positions on another figure
+% figure;
+% plot(global_ref_x, global_ref_y, 'LineWidth', 2);
+% xlabel('Global Reference Pos X');
+% ylabel('Global Reference Pos Y');
+% title('Global Reference Position Plot');
+% grid on;
